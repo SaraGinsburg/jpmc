@@ -1,0 +1,42 @@
+From 36f9c836721fdd1f87bacde23d65eede6acf5cbd Mon Sep 17 00:00:00 2001
+From: Sara Ginsburg <sara.ginsburg.ny@gmail.com>
+Date: Sun, 10 May 2020 23:52:47 -0400
+Subject: [PATCH] Create Patch File
+
+---
+ client_test.py | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/client_test.py b/client_test.py
+index 03ef997..27cfac3 100644
+--- a/client_test.py
++++ b/client_test.py
+@@ -39,21 +39,25 @@ class ClientTest(unittest.TestCase):
+     price_b = 0
+     self.assertIsNone(getRatio(price_a, price_b))
+ 
++
+   def test_getRatio_checkPriceAZero(self):
+     price_a = 0
+     price_b = 119.2
+     self.assertEqual(getRatio(price_a, price_b),0)
+ 
++
+   def test_getRatio_greaterThan1(self):
+     price_a = 121.68
+     price_b = 70.86
+     self.assertGreater(getRatio(price_a, price_b),1)
+ 
++
+   def test_getRatio_greaterThan1(self):
+     price_a = 70.86
+     price_b = 121.68
+     self.assertLess(getRatio(price_a, price_b),1)
+ 
++
+   def test_getRatio_exactly1(self):
+     price_a = 119.2
+     price_b = 119.2
+-- 
+2.23.0
+
